@@ -1,0 +1,23 @@
+# Build output and dependencies
+dist
+node_modules
+*.tsbuildinfo
+*.tgz
+
+# Secrets. Never commit API keys or tokens.
+.env
+.env.*
+!.env.example
+.npmrc
+
+# Logs and test output
+*.log
+npm-debug.log*
+coverage
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/launch.json

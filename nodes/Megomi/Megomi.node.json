@@ -1,0 +1,10 @@
+{
+	"node": "n8n-nodes-megomi.megomi",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing & Content", "Analytics"],
+	"resources": {
+		"credentialDocumentation": [{ "url": "https://www.megomi.my.id/docs/" }],
+		"primaryDocumentation": [{ "url": "https://www.megomi.my.id/docs/" }]
+	}
+}

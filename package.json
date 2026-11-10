@@ -1,0 +1,54 @@
+{
+    "name": "n8n-nodes-megomi",
+    "version": "0.1.0",
+    "description": "n8n community node for the Megomi API (TikTok, Instagram, Threads, YouTube)",
+    "license": "MIT",
+    "homepage": "https://www.megomi.my.id/docs/",
+    "keywords": [
+        "n8n-community-node-package"
+    ],
+    "author": {
+        "name": "Franco Antonio Pranata",
+        "email": "114636940+francopranata@users.noreply.github.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/megomi/n8n-nodes-megomi.git"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease",
+        "test": "npm run build && node --test test/*.test.mjs"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [
+            "dist/credentials/MegomiApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Megomi/Megomi.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "^0.56.1",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^21.1.0",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    },
+    "bugs": {
+        "url": "https://github.com/megomi/n8n-nodes-megomi/issues"
+    }
+}
