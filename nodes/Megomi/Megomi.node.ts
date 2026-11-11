@@ -34,7 +34,9 @@ export class Megomi implements INodeType {
 				noDataExpression: true,
 				options: [
 					{ name: 'Instagram', value: 'instagram' },
-					{ name: 'Thread', value: 'threads' },
+					// "Threads" is Meta's product name, not a plural noun.
+					// eslint-disable-next-line n8n-nodes-base/node-param-resource-with-plural-option
+					{ name: 'Threads', value: 'threads' },
 					{ name: 'TikTok', value: 'tiktok' },
 					{ name: 'YouTube', value: 'youtube' },
 				],
