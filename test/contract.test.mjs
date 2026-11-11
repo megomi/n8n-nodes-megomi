@@ -170,3 +170,14 @@ test('every operation enables the pagination hook (send.paginate)', () => {
 		for (const o of p.options)
 			assert.equal(o.routing.send?.paginate, true, `${p.displayOptions.show.resource[0]}.${o.value}`);
 });
+
+// A new unscoped package defaults to private on npm, and provenance refuses private
+// packages ("you must set access to public"). The v0.1.0 publish failed on this.
+import { readFileSync } from 'node:fs';
+test('package is published as public with no runtime dependencies', () => {
+	const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+	assert.equal(pkg.publishConfig?.access, 'public');
+	assert.equal(pkg.dependencies, undefined);
+	assert.equal(pkg.license, 'MIT');
+	assert.match(pkg.repository.url, /github\.com\/megomi\/n8n-nodes-megomi/);
+});
